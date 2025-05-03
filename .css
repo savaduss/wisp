@@ -1,56 +1,94 @@
+/* Basic Reset for Wisp Style */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
 body {
-  background: #f6f6f6 url('https://i.pinimg.com/originals/66/fb/f3/66fbf3a3dfd4c7352ec9f72e74a7e07e.gif') no-repeat center fixed;
-  background-size: cover;
-  font-family: 'Georgia', serif;
-  color: #444;
+    font-family: 'Georgia', serif; /* Elegant, serif font */
+    background-color: #f0f0f0; /* Light gray background */
+    color: #333; /* Dark text for contrast */
+    line-height: 1.6;
 }
 
-main {
-  background: rgba(255, 255, 255, 0.75);
-  backdrop-filter: blur(6px);
-  border-radius: 2em;
-  padding: 2em;
-  box-shadow: 0 0 30px rgba(100, 100, 100, 0.1);
+/* Page Layout */
+.profile-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2, h3 {
-  font-family: 'Georgia', serif;
-  color: #888;
-  letter-spacing: 1px;
+/* Header Styling */
+header {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
+header h1 {
+    font-size: 2.5em;
+    color: #333;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header p {
+    font-size: 1.2em;
+    color: #666;
+    margin-top: 10px;
+}
+
+/* About Section */
+.about-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.about-section p {
+    font-size: 1.2em;
+    color: #444;
+}
+
+/* Links Styling */
 a {
-  color: #aaa;
-  text-decoration: none;
-  transition: color 0.3s;
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
+
 a:hover {
-  color: #555;
+    color: #0077cc;
 }
 
-.profile-pic img {
-  filter: grayscale(100%) brightness(120%);
-  border-radius: 1.5em;
-  opacity: 0.8;
+/* Music Section */
+.music-section {
+    margin-top: 30px;
+    text-align: center;
 }
 
-nav, footer, .contact, .table-section,
-.blurbs, .friends, .table,
-.details-table td {
-  background: transparent;
-  border: none;
-  color: #888;
+iframe {
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-::-webkit-scrollbar {
-  width: 8px;
-}
-::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 8px;
-}
-
-*:focus {
-  outline: none !important;
-  box-shadow: none !important;
+/* Hide Audio Controls */
+.hide-audio {
+    visibility: hidden;
+    height: 1px;
+    width: 1px;
+    position: absolute;
 }
