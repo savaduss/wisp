@@ -1,94 +1,182 @@
-/* Basic Reset for Wisp Style */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+    --soft-bg: #f0f0f5;  /* Soft light background color */
+    --gradient-bg: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgba(200, 200, 200, 0.9));  /* Soft ethereal gradient */
+    --border-light: rgba(255, 255, 255, 0.6);  /* Light border for soft look */
+    --highlight-color: rgba(0, 173, 255, 0.8);  /* Light highlight color for accents */
+    --shadow-light: rgba(0, 0, 0, 0.1);  /* Light shadows for depth */
+    --text-color: #444;  /* Subtle text color */
+    --font-family: 'Georgia', serif;  /* Elegant font style */
 }
 
-/* Body Styling */
 body {
-    font-family: 'Georgia', serif; /* Elegant, serif font */
-    background-color: #f0f0f0; /* Light gray background */
-    color: #333; /* Dark text for contrast */
-    line-height: 1.6;
+    background-image: url('https://s3.amazonaws.com//depot.pacdudegames.com/spacehey/bliss.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: var(--font-family);
+    color: var(--text-color);
 }
 
-/* Page Layout */
-.profile-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+body:before {
+    content: " ";
+    height: 100vh;
+    width: 100vw;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-image: url('https://media.giphy.com/media/LbSdXQbS0XVVC/giphy.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    animation: fadeAnimation 3s ease-out 0s 1 normal forwards;
+    pointer-events: none;
 }
 
-/* Header Styling */
+@keyframes fadeAnimation {
+    0% { opacity: 1; }
+    75% { opacity: 0.7; }
+    100% { opacity: 0; }
+}
+
 header {
+    background: var(--gradient-bg);
+    padding: 2rem;
     text-align: center;
-    margin-bottom: 20px;
+    color: var(--highlight-color);
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px var(--shadow-light);
+    margin-bottom: 2rem;
 }
 
 header h1 {
-    font-size: 2.5em;
-    color: #333;
+    font-size: 2.5rem;
+    font-weight: bold;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 header p {
-    font-size: 1.2em;
-    color: #666;
-    margin-top: 10px;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    opacity: 0.8;
 }
 
-/* About Section */
-.about-section {
-    margin-top: 30px;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-    text-align: center;
+nav, footer {
+    margin: 1em;
+    position: relative;
+    box-shadow: 5px 8px 10px var(--shadow-light);
 }
 
-.about-section h2 {
-    font-size: 1.8em;
-    margin-bottom: 15px;
+footer {
+    margin-bottom: 3rem;
+    border: 2px solid var(--highlight-color);
 }
 
-.about-section p {
-    font-size: 1.2em;
-    color: #444;
+nav .top, nav .links {
+    border-left: 2px solid var(--highlight-color);
+    border-right: 2px solid var(--highlight-color);
 }
 
-/* Links Styling */
-a {
-    color: #333;
-    text-decoration: none;
-    transition: color 0.3s ease;
+main {
+    background: none;
+    padding: 2rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
 }
 
-a:hover {
-    color: #0077cc;
+.profile-wrapper {
+    background: var(--soft-bg);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0px 4px 12px var(--shadow-light);
 }
 
-/* Music Section */
-.music-section {
-    margin-top: 30px;
-    text-align: center;
+.profile h1 {
+    color: var(--highlight-color);
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
 }
 
-iframe {
+.profile .left {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.profile .general-about {
+    background: #FFF;
+    padding: 1em;
+    box-shadow: 5px 8px 10px var(--shadow-light);
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-light);
 }
 
-/* Hide Audio Controls */
-.hide-audio {
-    visibility: hidden;
-    height: 1px;
-    width: 1px;
-    position: absolute;
+.profile .left .mood {
+    background: #FFF;
+    padding: 1em;
+    border-radius: 10px;
+    box-shadow: 5px 8px 10px var(--shadow-light);
+    margin-top: 1em;
+}
+
+.profile .left .mood p {
+    margin-left: 1em;
+}
+
+.profile .left .mood:before {
+    content: "🙂 Mood";
+    display: block;
+    padding: 1em;
+    background: var(--gradient-bg);
+    font-family: var(--font-family);
+    font-size: 1.2rem;
+    color: var(--highlight-color);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+}
+
+.profile .contact {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--highlight-color);
+    color: #FFF;
+    padding: 1em;
+    text-align: center;
+}
+
+.profile .contact a {
+    color: #FFF;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5em;
+    background: rgba(0, 173, 255, 0.6);
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.profile .contact a:hover {
+    background: rgba(0, 173, 255, 1);
+}
+
+.music-section {
+    margin-top: 2rem;
+    background: var(--soft-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px var(--shadow-light);
+}
+
+.music-section iframe {
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+}
+
+.music-section h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--highlight-color);
 }
